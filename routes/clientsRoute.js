@@ -17,4 +17,11 @@ router.post('/', (req, res) => {
     clientsController.create(req, res)
 });
 
+router.put('/:id', (req, res) => {
+    clientsController.update(req, res)
+});
+
+router.delete('/:id', (req, res) => {
+    clientsController.delete(req, res)
+});
 module.exports = router
