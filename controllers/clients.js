@@ -18,7 +18,7 @@ module.exports = {
         })
         res.status(200).send(clients)
     },
-
+//testando//
     async create(req, res) {
         const clients = await Clients(sequelize, Sequelize.DataTypes).
             create({
