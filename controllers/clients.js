@@ -2,7 +2,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../db/db');
 const Clients = require('../models/clients');
-const clients = require('../models/clients');
+
 
 module.exports = {
 
@@ -18,7 +18,7 @@ module.exports = {
         })
         res.status(200).send(clients)
     },
-//testando//
+    //testando//
     async create(req, res) {
         const clients = await Clients(sequelize, Sequelize.DataTypes).
             create({
@@ -33,6 +33,7 @@ module.exports = {
                 cep: req.body.cep,
                 complemento: req.body.complemento,
                 estado: req.body.estado,
+                senha: req.body.senha
             })
         res.status(200).send({
             message: ('cliente cadastrado com sucesso')
@@ -54,6 +55,7 @@ module.exports = {
                 cep: req.body.cep,
                 complemento: req.body.complemento,
                 estado: req.body.estado,
+                senha: req.body.senha
             },
                 {
                     where: { id: req.params.id }
@@ -64,11 +66,11 @@ module.exports = {
     },
 
     async delete(req, res) {
-        const clients = await Clients(sequelize,Sequelize.DataTypes).destroy({
+        const clients = await Clients(sequelize, Sequelize.DataTypes).destroy({
             where: { id: req.params.id }
         })
         res.status(200).send({
             message: "cliente excluído."
         })
-}
+    }
 }
