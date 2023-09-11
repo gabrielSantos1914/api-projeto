@@ -28,7 +28,7 @@ module.exports = {
             const newLogin = await Logins(sequelize, Sequelize.DataTypes).create({
                 email: req.body.email,
                 senha: req.body.senha,
-                clienteId: client.id
+                clientId: client.id
             
             })
             const token = jwt.sign({ id: client.id }, secretKey, { expiresIn: '1h' });

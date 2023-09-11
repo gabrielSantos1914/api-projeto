@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => { //exporta o módulo clients para se
 
         email: DataTypes.STRING(50),
         senha: DataTypes.STRING(25),
-        clienteId: DataTypes.SMALLINT,
+        clientId: DataTypes.SMALLINT,
     },
         {
             sequelize, //conexão

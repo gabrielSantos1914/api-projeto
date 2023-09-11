@@ -14,6 +14,7 @@ const orders_itensRoute = require('./routes/orders_itensRoute')
 const ordersRoute = require('./routes/ordersRoute');
 const productsRoute = require('./routes/productsRoute');
 const statesRoute = require('./routes/statesRoute');
+const Logins = require('./routes/loginsRoute');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -36,7 +37,8 @@ app.use('/deliveries', deliveriesRoute);
 app.use('/orders_itens',orders_itensRoute);
 app.use('/orders', ordersRoute);
 app.use('/products', productsRoute);
-app.use('/states',statesRoute)
+app.use('/states',statesRoute);
+app.use('/auth', Logins)
 
 
 app.use((req, res, next) => {
